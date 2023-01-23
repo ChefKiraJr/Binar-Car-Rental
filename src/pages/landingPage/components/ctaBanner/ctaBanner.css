@@ -1,0 +1,46 @@
+.banner__container {
+  width: 100%;
+  margin-bottom: 100px;
+  padding: 0 16px;
+}
+
+.banner__content {
+  max-width: 1168px;
+  margin: auto;
+  padding: 64px 58px;
+  background: #0d28a6;
+  border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__main-text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.banner__desc-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 468px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 52px;
+}
+
+@media (max-width: 1024px) {
+  .banner__container {
+    margin-bottom: 50px;
+  }
+
+  .banner__desc-text {
+    margin-bottom: 32px;
+  }
+}

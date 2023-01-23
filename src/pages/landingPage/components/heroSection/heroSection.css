@@ -1,0 +1,133 @@
+.hero-section__container {
+  margin-bottom: 104px;
+  width: 100%;
+  padding: 0 16px;
+  padding-top: 177px;
+  background-color: #f1f3ff;
+}
+
+.hero-section__search {
+  margin-bottom: 104px;
+  width: 100%;
+  padding: 0 16px;
+  padding-top: 177px;
+  background-color: #f1f3ff;
+}
+
+.hero-section__content {
+  max-width: 1168px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-section__main-text {
+  max-width: 568px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.hero-section__desc-text {
+  max-width: 468px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.hero-section__button {
+  margin-bottom: 87px;
+}
+
+.hero-section__photo-large {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  top: 97px;
+}
+
+.hero-section__photo-search {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  top: 97px;
+}
+
+.hero-section__photo-small {
+  display: none;
+}
+
+@media (max-width: 1204px) {
+  .hero-section__container {
+    padding-bottom: 336px;
+  }
+  .hero-section__photo-large {
+    top: 430px;
+  }
+  .hero-section__photo-search {
+    display: none;
+  }
+}
+
+@media (max-width: 704px) {
+  .hero-section__container {
+    padding-bottom: 112px;
+  }
+  .hero-section__photo-large {
+    display: none;
+  }
+  .hero-section__photo-small {
+    display: inline-block;
+    position: absolute;
+    top: 415px;
+    right: 0;
+  }
+}
+
+@media (max-width: 519px) {
+  .hero-section__photo-small {
+    display: inline-block;
+    position: absolute;
+    top: 465px;
+    right: 0;
+  }
+}
+
+@media (max-width: 426px) {
+  .hero-section__photo-small {
+    display: inline-block;
+    position: absolute;
+    top: 486px;
+    right: 0;
+  }
+}
+
+@media (max-width: 384px) {
+  .hero-section__photo-small {
+    display: inline-block;
+    position: absolute;
+    top: 542px;
+    right: 0;
+  }
+}
+
+@media (max-width: 347px) {
+  .hero-section__photo-small {
+    display: inline-block;
+    position: absolute;
+    top: 560px;
+    right: 0;
+  }
+}
+
+@media (max-width: 330px) {
+  .hero-section__photo-small {
+    display: inline-block;
+    position: absolute;
+    top: 568px;
+    right: 0;
+  }
+}

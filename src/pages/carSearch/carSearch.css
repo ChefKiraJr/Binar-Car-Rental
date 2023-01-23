@@ -1,0 +1,49 @@
+.car-search__container {
+  width: 100%;
+}
+
+.car-search__content {
+  width: 100%;
+  padding: 0 16px;
+}
+
+.car-search__main {
+  z-index: 100;
+  position: relative;
+  top: -155px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 1047px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 24px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.car-search__main:focus-within {
+  box-shadow: 0px 0px 0 5000px rgba(0, 0, 0, 0.5);
+}
+
+.car-search__input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.car-search__input > p {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3c3c3c;
+}
+
+.car-search__button {
+  margin-top: 22px;
+}

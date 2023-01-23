@@ -1,0 +1,87 @@
+.header-container {
+  z-index: 50;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 16px;
+  padding-right: 25px;
+  background-color: #f1f3ff;
+}
+
+.header-content {
+  max-width: 1168px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 100px;
+  height: 34px;
+  background-color: #0d28a6;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav p {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.header-nav p:hover {
+  background-color: #0d28a6;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.drawer-button {
+  display: none;
+  position: absolute;
+  right: -40px;
+  cursor: pointer;
+}
+
+.drawer-nav__head {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.drawer-nav__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drawer-nav__body p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .drawer-button {
+    right: 25px;
+  }
+  .header-nav {
+    display: none;
+  }
+}
