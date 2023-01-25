@@ -6,7 +6,7 @@ import Footer from './components/footer/Footer';
 const CommonLayout = (props) => {
   return (
     <>
-      <Header scroller={props.scroller} />
+      <Header scroller={props.scroller} page={props.page} />
       {props.children}
       <Footer page={props.page} />
     </>

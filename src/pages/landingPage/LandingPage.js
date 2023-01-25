@@ -13,7 +13,7 @@ import { scroller } from 'react-scroll';
 const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <CommonLayout scroller={scroller}>
+    <CommonLayout scroller={scroller} page="landingPage">
       <HeroSection navigate={navigate} />
       <OurServices />
       <WhyUs />

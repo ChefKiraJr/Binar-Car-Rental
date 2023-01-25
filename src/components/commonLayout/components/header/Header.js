@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-const Header = ({ scroller }) => {
+const Header = ({ scroller, page }) => {
   const handleLink = (content) => {
     scroller.scrollTo(content, {
       smooth: true,
@@ -24,7 +24,11 @@ const Header = ({ scroller }) => {
     <div className="header-container">
       <div className="header-content">
         <div className="header-logo"></div>
-        <div className="header-nav">
+        <div
+          className={
+            page === 'landingPage' ? 'header-nav' : 'header-nav__unfunc'
+          }
+        >
           <p onClick={() => handleLink('our-service')}>Our Service</p>
           <p onClick={() => handleLink('why-us')}>Why Us</p>
           <p onClick={() => handleLink('testimonial')}>Testimonial</p>

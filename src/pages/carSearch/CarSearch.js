@@ -110,7 +110,7 @@ const CarSearch = () => {
                   onChange={(event) => handleChange(event)}
                 >
                   <option value="false">Disewakan</option>
-                  <option value="true">Dijual</option>
+                  <option value="true">Sedang Disewa</option>
                 </Select>
               </div>
               <Button
