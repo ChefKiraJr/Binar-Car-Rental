@@ -1,13 +1,13 @@
-import React from 'react';
-import './carInformation.css';
+import React from "react";
+import "./carInformation.css";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from '@chakra-ui/react';
-import { PeopleIcon } from './Dummy';
+} from "@chakra-ui/react";
+import { PeopleIcon } from "./Dummy";
 
 const CarInformation = ({ data }) => {
   return (
@@ -76,13 +76,13 @@ const CarInformation = ({ data }) => {
               <div className="car-card__header">
                 <p>{data.name}</p>
                 <div className="car-card__people">
-                  <PeopleIcon />{' '}
+                  <PeopleIcon />{" "}
                   <p>
-                    {data.category === 'large'
-                      ? '5 - 7 orang'
-                      : data.category === 'medium'
-                      ? '4 - 5 orang'
-                      : '2 - 4 orang'}
+                    {data.category === "large"
+                      ? "5 - 7 orang"
+                      : data.category === "medium"
+                      ? "4 - 5 orang"
+                      : "2 - 4 orang"}
                   </p>
                 </div>
               </div>

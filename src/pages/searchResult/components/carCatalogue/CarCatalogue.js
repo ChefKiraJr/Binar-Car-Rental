@@ -1,7 +1,7 @@
-import React from 'react';
-import './carCatalogue.css';
-import { Button } from '@chakra-ui/react';
-import { useNavigate } from 'react-router';
+import React from "react";
+import "./carCatalogue.css";
+import { Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router";
 
 const CarCatalogue = ({ data }) => {
   const navigate = useNavigate();
@@ -9,9 +9,9 @@ const CarCatalogue = ({ data }) => {
     <div className="car-catalogue__container">
       {data && (
         <>
-          {data.cars.length > 0 ? (
+          {data.length > 0 ? (
             <div className="car-catalogue__main">
-              {data.cars.map((value, index) => {
+              {data.map((value, index) => {
                 return (
                   <div className="car-catalogue__card" key={value.id}>
                     <div className="car-catalogue__image">
@@ -23,7 +23,7 @@ const CarCatalogue = ({ data }) => {
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.{' '}
+                        magna aliqua.{" "}
                       </p>
                     </div>
                     <Button
@@ -36,9 +36,7 @@ const CarCatalogue = ({ data }) => {
                       lineHeight="20px"
                       backgroundColor="#5CB85F"
                       borderRadius="2px"
-                      onClick={() =>
-                        navigate(`/car-detail/${data.cars[index].id}`)
-                      }
+                      onClick={() => navigate(`/car-detail/${data[index].id}`)}
                     >
                       Pilih Mobil
                     </Button>
