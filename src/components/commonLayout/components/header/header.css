@@ -50,6 +50,21 @@
   padding: 4px;
 }
 
+.header-nav__unfunc {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav__unfunc p {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
 .drawer-button {
   display: none;
   position: absolute;

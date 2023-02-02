@@ -8,7 +8,7 @@
 }
 
 .car-search__main {
-  z-index: 100;
+  z-index: 25;
   position: relative;
   top: -155px;
   left: 0;
@@ -27,6 +27,7 @@
 
 .car-search__main:focus-within {
   box-shadow: 0px 0px 0 5000px rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
 .car-search__input {
@@ -46,4 +47,10 @@
 
 .car-search__button {
   margin-top: 22px;
+}
+
+@media (min-width: 769px) {
+  .car-search__page {
+    height: 100vh;
+  }
 }
