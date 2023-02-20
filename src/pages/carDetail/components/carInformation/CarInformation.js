@@ -9,8 +9,10 @@ import {
 } from '@chakra-ui/react';
 import { PeopleIcon } from './Dummy';
 import { Button, Input } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 const CarInformation = ({ data }) => {
+  const navigate = useNavigate();
   return (
     <>
       {data && (
@@ -77,7 +79,7 @@ const CarInformation = ({ data }) => {
               <div className="car-card__header">
                 <p>{data.name}</p>
                 <div className="car-card__people">
-                  <PeopleIcon />{' '}
+                  <PeopleIcon />
                   <p>
                     {data.category === 'large'
                       ? '5 - 7 orang'
@@ -94,14 +96,15 @@ const CarInformation = ({ data }) => {
               </div>
               <Button
                 w="100%"
-                h="48px"
-                padding="14px"
+                h="36px"
+                padding="8px 0"
                 color="#fff"
                 fontWeight="700"
                 fontSize="14px"
                 lineHeight="20px"
                 backgroundColor="#5CB85F"
                 borderRadius="2px"
+                onClick={() => navigate('/payment')}
               >
                 Lanjutkan Pembayaran
               </Button>
