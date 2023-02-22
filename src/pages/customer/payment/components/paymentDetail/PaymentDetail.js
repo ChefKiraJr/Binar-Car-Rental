@@ -1,6 +1,6 @@
-import React from 'react';
-import { PeopleIcon } from '../../../../carDetail/components/carInformation/Dummy';
-import './paymentDetail.css';
+import React, { useState } from "react";
+import { PeopleIcon } from "../../../../carDetail/components/carInformation/Dummy";
+import "./paymentDetail.css";
 import {
   Accordion,
   AccordionItem,
@@ -8,9 +8,12 @@ import {
   AccordionPanel,
   AccordionIcon,
   Button,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
+import { CheckIcon } from "./Dummy";
 
-const PaymentDetail = () => {
+const PaymentDetail = ({ data }) => {
+  const [paymentMethod, setPaymentMethod] = useState("");
+  console.log(paymentMethod);
   return (
     <div className="payment-detail__container">
       <div className="payment-detail__main">
@@ -21,26 +24,50 @@ const PaymentDetail = () => {
             atau Mobile Banking
           </p>
           <div className="payment-detail__select">
-            <div className="payment-detail__option">
-              <p>BCA</p>
-              <p>BCA Transfer</p>
+            <div
+              className="payment-detail__option"
+              onClick={() => setPaymentMethod("BCA")}
+            >
+              <div className="payment-option__text">
+                <p>BCA</p>
+                <p>BCA Transfer</p>
+              </div>
+              {paymentMethod === "BCA" && <CheckIcon />}
             </div>
-            <div className="payment-detail__option">
-              <p>BNI</p>
-              <p>BNI Transfer</p>
+            <div
+              className="payment-detail__option"
+              onClick={() => setPaymentMethod("BNI")}
+            >
+              <div className="payment-option__text">
+                <p>BNI</p>
+                <p>BNI Transfer</p>
+              </div>
+              {paymentMethod === "BNI" && <CheckIcon />}
             </div>
-            <div className="payment-detail__option">
-              <p>Mandiri</p>
-              <p>Mandiri Transfer</p>
+            <div
+              className="payment-detail__option"
+              onClick={() => setPaymentMethod("Mandiri")}
+            >
+              <div className="payment-option__text">
+                <p>Mandiri</p>
+                <p>Mandiri Transfer</p>
+              </div>
+              {paymentMethod === "Mandiri" && <CheckIcon />}
             </div>
           </div>
         </div>
         <div className="payment-detail__summary">
           <div className="payment-summary__header">
-            <p>Innova</p>
+            <p>{data.name}</p>
             <div className="payment-summary__people">
               <PeopleIcon />
-              <p>6-8 orang</p>
+              <p>
+                {data.category === "large"
+                  ? "6 - 8 orang"
+                  : data.category === "medium"
+                  ? "4 - 6 orang"
+                  : "2 - 4 orang"}
+              </p>
             </div>
           </div>
           <Accordion allowToggle>
@@ -53,14 +80,16 @@ const PaymentDetail = () => {
                   <p>Total</p>
                   <AccordionIcon w="24px" h="24px" />
                 </div>
-                <div className="payment-accordion__total">Rp 3.500.000</div>
+                <div className="payment-accordion__total">
+                  Rp {data.price * 7}
+                </div>
               </AccordionButton>
               <AccordionPanel pb={4} padding="0">
                 <div className="payment-accordion__info">
                   <p>Harga</p>
                   <div className="accordion-info__desc">
                     <p>Sewa Mobil Rp.500.000 x 7 Hari</p>
-                    <p>Rp 3.500.000</p>
+                    <p>Rp {data.price * 7}</p>
                   </div>
                 </div>
                 <div className="payment-accordion__info">
@@ -88,9 +117,10 @@ const PaymentDetail = () => {
           </Accordion>
           <div className="payment-summary__total">
             <p>Total</p>
-            <p>Rp 3.500.000</p>
+            <p>Rp {data.price * 7}</p>
           </div>
           <Button
+            isDisabled={paymentMethod === "" ? true : false}
             w="100%"
             h="36px"
             padding="8px"

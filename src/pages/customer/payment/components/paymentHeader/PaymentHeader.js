@@ -1,13 +1,20 @@
-import React from 'react';
-import './paymentHeader.css';
-import { BackIcon, DashIcon } from './Dummy';
+import React from "react";
+import "./paymentHeader.css";
+import { BackIcon, DashIcon } from "./Dummy";
+import { useNavigate } from "react-router";
 
-const PaymentHeader = () => {
+const PaymentHeader = ({ anak }) => {
+  const navigate = useNavigate();
   return (
     <div className="payment-header__container">
       <div className="payment-header__main">
         <div className="payment-header__title">
-          <BackIcon />
+          <div
+            className="payment-header__back"
+            onClick={() => navigate(`/car-detail/${anak}`)}
+          >
+            <BackIcon />
+          </div>
           <p>Pembayaran</p>
         </div>
         <div className="payment-header__tracker">

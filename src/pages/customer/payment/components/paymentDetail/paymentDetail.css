@@ -46,13 +46,20 @@
 
 .payment-detail__option {
   display: flex;
-  gap: 16px;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
   border-bottom: 1px solid #eeeeee;
+  cursor: pointer;
 }
 
-.payment-detail__option > p:nth-child(1) {
+.payment-option__text {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.payment-option__text > p:nth-child(1) {
   width: 61px;
   padding: 6px 0;
   border: 1px solid #d0d0d0;
@@ -64,7 +71,7 @@
   text-align: center;
 }
 
-.payment-detail__option > p:nth-child(2) {
+.payment-option__text > p:nth-child(2) {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;

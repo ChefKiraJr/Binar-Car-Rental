@@ -1,15 +1,15 @@
-import React from 'react';
-import './carInformation.css';
+import React from "react";
+import "./carInformation.css";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from '@chakra-ui/react';
-import { PeopleIcon } from './Dummy';
-import { Button, Input } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+} from "@chakra-ui/react";
+import { PeopleIcon } from "./Dummy";
+import { Button, Input } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const CarInformation = ({ data }) => {
   const navigate = useNavigate();
@@ -81,11 +81,11 @@ const CarInformation = ({ data }) => {
                 <div className="car-card__people">
                   <PeopleIcon />
                   <p>
-                    {data.category === 'large'
-                      ? '5 - 7 orang'
-                      : data.category === 'medium'
-                      ? '4 - 5 orang'
-                      : '2 - 4 orang'}
+                    {data.category === "large"
+                      ? "6 - 8 orang"
+                      : data.category === "medium"
+                      ? "4 - 6 orang"
+                      : "2 - 4 orang"}
                   </p>
                 </div>
               </div>
@@ -104,7 +104,7 @@ const CarInformation = ({ data }) => {
                 lineHeight="20px"
                 backgroundColor="#5CB85F"
                 borderRadius="2px"
-                onClick={() => navigate('/payment')}
+                onClick={() => navigate(`/payment/${data.id}`)}
               >
                 Lanjutkan Pembayaran
               </Button>
