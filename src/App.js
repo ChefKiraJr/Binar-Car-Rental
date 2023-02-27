@@ -6,6 +6,7 @@ import CarDetail from "./pages/carDetail/CarDetail";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Payment from "./pages/customer/payment/Payment";
+import ETicket from "./pages/customer/eTicket/ETicket";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/search-result" element={<SearchResult />} />
           <Route path="/car-detail/:anak" element={<CarDetail />} />
           <Route path="/payment/:anak" element={<Payment />} />
+          <Route path="/ticket/:anak" element={<ETicket />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

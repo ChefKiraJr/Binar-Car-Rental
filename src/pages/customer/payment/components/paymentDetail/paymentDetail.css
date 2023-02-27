@@ -116,7 +116,7 @@
 .payment-accordion__button {
   display: flex;
   justify-content: space-between;
-  aling-items: center;
+  align-items: center;
   margin-bottom: 18px;
 }
 
