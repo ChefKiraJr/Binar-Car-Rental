@@ -1,12 +1,12 @@
 // import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-import CommonLayout from "../../components/commonLayout/CommonLayout";
-import { getCarDetail } from "../../store/actions/getCarDetailAction";
-import "./carDetail.css";
-import CarInformation from "./components/carInformation/CarInformation";
-import DetailForm from "./components/detailForm/DetailForm";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import CommonLayout from '../../components/commonLayout/CommonLayout';
+import { getCarDetail } from '../../store/actions/getCarDetailAction';
+import './carDetail.css';
+import CarInformation from './components/carInformation/CarInformation';
+import DetailForm from './components/detailForm/DetailForm';
 
 const CarDetail = () => {
   // const [data, setData] = useState();

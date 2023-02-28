@@ -1,15 +1,37 @@
-import React from "react";
-import "./carInformation.css";
+import React, { useState } from 'react';
+import './carInformation.css';
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from "@chakra-ui/react";
-import { PeopleIcon } from "./Dummy";
+} from '@chakra-ui/react';
+import { PeopleIcon, CalendarIcon } from './Dummy';
+import { Button } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
+import { addDays } from 'date-fns';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const CarInformation = ({ data }) => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(addDays(new Date(), 6));
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+  const handleClick = () => {
+    localStorage.setItem('startDate', startDate);
+    localStorage.setItem('endDate', endDate);
+    const diff = endDate.getTime() - startDate.getTime();
+    const msInDay = 1000 * 3600 * 24;
+    const range = diff / msInDay + 1;
+    localStorage.setItem('range', range);
+    navigate(`/payment/${data.id}`);
+  };
+  const navigate = useNavigate();
   return (
     <>
       {data && (
@@ -76,20 +98,51 @@ const CarInformation = ({ data }) => {
               <div className="car-card__header">
                 <p>{data.name}</p>
                 <div className="car-card__people">
-                  <PeopleIcon />{" "}
+                  <PeopleIcon />
                   <p>
-                    {data.category === "large"
-                      ? "5 - 7 orang"
-                      : data.category === "medium"
-                      ? "4 - 5 orang"
-                      : "2 - 4 orang"}
+                    {data.category === 'large'
+                      ? '6 - 8 orang'
+                      : data.category === 'medium'
+                      ? '4 - 6 orang'
+                      : '2 - 4 orang'}
                   </p>
+                </div>
+              </div>
+              <div className="car-card__date">
+                <p>Tentukan lama sewa mobil (max. 7 hari)</p>
+                <div className="car-card__input">
+                  <DatePicker
+                    dateFormat="MMM dd yyyy"
+                    selected={startDate}
+                    onChange={onChange}
+                    startDate={startDate}
+                    endDate={endDate}
+                    selectsRange
+                    includeDateIntervals={[
+                      { start: startDate, end: addDays(startDate, 6) },
+                    ]}
+                  />
+                  <CalendarIcon />
                 </div>
               </div>
               <div className="car-card__price">
                 <p>Total</p>
                 <p>{`Rp ${data.price}`}</p>
               </div>
+              <Button
+                w="100%"
+                h="36px"
+                padding="8px 0"
+                color="#fff"
+                fontWeight="700"
+                fontSize="14px"
+                lineHeight="20px"
+                backgroundColor="#5CB85F"
+                borderRadius="2px"
+                onClick={() => handleClick()}
+              >
+                Lanjutkan Pembayaran
+              </Button>
             </div>
           </div>
         </div>
