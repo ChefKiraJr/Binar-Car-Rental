@@ -133,7 +133,7 @@ const PaymentDetail = ({ data, range }) => {
             lineHeight="20px"
             backgroundColor="#5CB85F"
             borderRadius="2px"
-            onClick={() => navigate(`/ticket/${data.id}`)}
+            onClick={() => navigate(`/payout/${data.id}`)}
           >
             Bayar
           </Button>
