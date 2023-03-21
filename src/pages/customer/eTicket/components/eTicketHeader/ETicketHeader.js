@@ -14,7 +14,7 @@ const ETicketHeader = ({ anak }) => {
         <div className="ticket-header__title">
           <div
             className="ticket-header__back"
-            onClick={() => navigate(`/payment/${anak}`)}
+            onClick={() => navigate(`/payout/${anak}`)}
           >
             <BackIcon />
           </div>
