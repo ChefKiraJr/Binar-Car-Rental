@@ -1,7 +1,7 @@
-import React from 'react';
-import './ourServices.css';
-import serviceImage from '../../../../assets/images/img_service.png';
-import { ListIcon } from './Dummy';
+import React from "react";
+import "./ourServices.css";
+import serviceImage from "../../../../assets/images/img_service.webp";
+import { ListIcon } from "./Dummy";
 
 const OurServices = () => {
   return (
