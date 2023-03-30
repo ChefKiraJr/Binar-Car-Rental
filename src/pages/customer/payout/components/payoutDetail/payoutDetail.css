@@ -1,0 +1,142 @@
+.payout-detail__container {
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.payout-detail__main {
+  max-width: 1047px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.payout-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.payout-detail__time {
+  width: 605px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.payout-time__text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.payout-time__text > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.payout-time__text > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
+.payout-detail__bank {
+  width: 605px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.payout-detail__bank > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.payout-detail__instruction {
+  width: 605px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 24px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.payout-detail__instruction > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.payout-instruction__option {
+  display: flex;
+  margin-top: 24px;
+}
+
+.payout-option__active {
+  width: 139px;
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #5cb85f;
+}
+
+.payout-option__active p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.payout-option__inactive {
+  width: 139px;
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.payout-option__inactive p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.payout-instruction__list {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 175%;
+  color: #8a8a8a;
+}
+
+.payout-detail__confirmation {
+  width: 405px;
+  height: 168px;
+  padding: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.payout-detail__confirmation p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
