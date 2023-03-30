@@ -5,6 +5,7 @@ import SearchResult from "./pages/searchResult/SearchResult";
 import CarDetail from "./pages/carDetail/CarDetail";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginForm from "./pages/admin/LoginForm";
 import Login from "./pages/customer/login/Login";
 import Register from "./pages/customer/register/Register";
 import Payment from "./pages/customer/payment/Payment";

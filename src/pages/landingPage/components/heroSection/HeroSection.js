@@ -1,16 +1,16 @@
-import React from 'react';
-import './heroSection.css';
-import largeCar from '../../../../assets/images/mercedes_large.png';
-import smallCar from '../../../../assets/images/mercedes_small.png';
-import { Button } from '@chakra-ui/react';
+import React from "react";
+import "./heroSection.css";
+import largeCar from "../../../../assets/images/mercedes_large.webp";
+import smallCar from "../../../../assets/images/mercedes_small.webp";
+import { Button } from "@chakra-ui/react";
 
 const HeroSection = ({ navigate, page }) => {
   return (
     <div
       className={
-        page === 'carSearch'
-          ? 'hero-section__search'
-          : 'hero-section__container'
+        page === "carSearch"
+          ? "hero-section__search"
+          : "hero-section__container"
       }
     >
       <div className="hero-section__content">
@@ -33,23 +33,23 @@ const HeroSection = ({ navigate, page }) => {
           fontSize="14px"
           fontWeight="700"
           lineHeight="20px"
-          onClick={() => navigate('/car-search')}
-          visibility={page === 'carSearch' && 'hidden'}
+          onClick={() => navigate("/car-search")}
+          visibility={page === "carSearch" && "hidden"}
         >
           Mulai Sewa Mobil
         </Button>
         <div
           className={
-            page === 'carSearch'
-              ? 'hero-section__photo-search'
-              : 'hero-section__photo-large'
+            page === "carSearch"
+              ? "hero-section__photo-search"
+              : "hero-section__photo-large"
           }
         >
           <img src={largeCar} alt="mercedes-car" />
         </div>
         <div
           className="hero-section__photo-small"
-          style={{ display: page === 'carSearch' && 'none' }}
+          style={{ display: page === "carSearch" && "none" }}
         >
           <img src={smallCar} alt="mercedes-car" />
         </div>
