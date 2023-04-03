@@ -6,7 +6,7 @@ import { CopyIcon } from "./Dummy";
 import { ImageIcon } from "../../../eTicket/components/eTicketSuccess/Dummy";
 
 const PayoutDetail = ({ anak }) => {
-  const [confirmStatus, setConfirmStatus] = useState(true);
+  const [confirmStatus, setConfirmStatus] = useState(false);
   const navigate = useNavigate();
   return (
     <div className="payout-detail__container">
