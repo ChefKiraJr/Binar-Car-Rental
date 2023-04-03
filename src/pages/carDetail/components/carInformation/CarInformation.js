@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import './carInformation.css';
+import React, { useState } from "react";
+import "./carInformation.css";
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from '@chakra-ui/react';
-import { PeopleIcon, CalendarIcon } from './Dummy';
-import { Button } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
-import { addDays } from 'date-fns';
-import 'react-datepicker/dist/react-datepicker.css';
+} from "@chakra-ui/react";
+import { PeopleIcon, CalendarIcon } from "./Dummy";
+import { Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import { addDays } from "date-fns";
+import "react-datepicker/dist/react-datepicker.css";
 
 const CarInformation = ({ data }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -23,12 +23,12 @@ const CarInformation = ({ data }) => {
     setEndDate(end);
   };
   const handleClick = () => {
-    localStorage.setItem('startDate', startDate);
-    localStorage.setItem('endDate', endDate);
+    localStorage.setItem("startDate", startDate);
+    localStorage.setItem("endDate", endDate);
     const diff = endDate.getTime() - startDate.getTime();
     const msInDay = 1000 * 3600 * 24;
     const range = diff / msInDay + 1;
-    localStorage.setItem('range', range);
+    localStorage.setItem("range", range);
     navigate(`/payment/${data.id}`);
   };
   const navigate = useNavigate();
@@ -100,11 +100,11 @@ const CarInformation = ({ data }) => {
                 <div className="car-card__people">
                   <PeopleIcon />
                   <p>
-                    {data.category === 'large'
-                      ? '6 - 8 orang'
-                      : data.category === 'medium'
-                      ? '4 - 6 orang'
-                      : '2 - 4 orang'}
+                    {data.category === "large"
+                      ? "6 - 8 orang"
+                      : data.category === "medium"
+                      ? "4 - 6 orang"
+                      : "2 - 4 orang"}
                   </p>
                 </div>
               </div>
