@@ -6,10 +6,16 @@ import PayoutDetail from "./components/payoutDetail/PayoutDetail";
 
 const Payout = () => {
   const { anak } = useParams();
+  const paymentMethod = localStorage.getItem("paymentMethod");
+  const totalPayment = localStorage.getItem("totalPayment");
   return (
     <CommonLayout>
-      <PayoutHeader anak={anak} />
-      <PayoutDetail anak={anak} />
+      <PayoutHeader anak={anak} paymentMethod={paymentMethod} />
+      <PayoutDetail
+        anak={anak}
+        paymentMethod={paymentMethod}
+        totalPayment={totalPayment}
+      />
     </CommonLayout>
   );
 };

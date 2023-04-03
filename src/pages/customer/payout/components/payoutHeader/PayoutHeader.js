@@ -6,7 +6,7 @@ import {
 } from "../../../payment/components/paymentHeader/Dummy";
 import { useNavigate } from "react-router-dom";
 
-const PayoutHeader = ({ anak }) => {
+const PayoutHeader = ({ anak, paymentMethod }) => {
   const navigate = useNavigate();
   return (
     <div className="payout-header__container">
@@ -18,7 +18,7 @@ const PayoutHeader = ({ anak }) => {
           >
             <BackIcon />
           </div>
-          <p>BCA Transfer</p>
+          <p>{paymentMethod} Transfer</p>
         </div>
         <div className="payout-header__tracker">
           <div className="payout-tracker__step-active">

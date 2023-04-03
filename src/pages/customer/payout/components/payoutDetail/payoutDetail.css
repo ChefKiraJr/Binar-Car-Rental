@@ -50,10 +50,27 @@
   color: #3c3c3c;
 }
 
+.payout-time__number p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.payout-time__countdown {
+  color: #ffffff;
+  padding: 2px 4px;
+  background: #fa2c5a;
+  border-radius: 2px;
+}
+
 .payout-detail__bank {
   width: 605px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   padding: 24px 24px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
@@ -64,6 +81,100 @@
   font-size: 14px;
   line-height: 20px;
   color: #000000;
+}
+
+.payout-detail__bank-name {
+  display: flex;
+  gap: 16px;
+}
+
+.payout-bank__badge {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+}
+
+.payout-bank__badge p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.payout-bank__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payout-bank__detail p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.payout-detail__bank-number {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payout-detail__bank-number > p:nth-child(1) {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3c3c3c;
+}
+
+.payout-number__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border: 1px solid #3c3c3c;
+  border-radius: 2px;
+}
+
+.payout-number__text p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3c3c3c;
+}
+
+.payout-detail__bank-total {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payout-detail__bank-total > p:nth-child(1) {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3c3c3c;
+}
+
+.payout-total__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  border: 1px solid #3c3c3c;
+  border-radius: 2px;
+}
+
+.payout-total__text p {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3c3c3c;
 }
 
 .payout-detail__instruction {
@@ -123,7 +234,7 @@
   color: #8a8a8a;
 }
 
-.payout-detail__confirmation {
+.payout-detail__check {
   width: 405px;
   height: 168px;
   padding: 24px 24px;
@@ -134,9 +245,81 @@
   border-radius: 8px;
 }
 
-.payout-detail__confirmation p {
+.payout-detail__check p {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #000000;
+}
+
+.payout-detail__confirmation {
+  width: 405px;
+  height: 474px;
+  padding: 24px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.payout-confirmation__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.payout-confirmation__header > p:nth-child(1) {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.payout-confirmation__header > p:nth-child(2) {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.payout-detail__confirmation > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.payout-confirmation__upload {
+  display: flex;
+  flex-direction: column;
+}
+
+.payout-confirmation__upload > p:nth-child(1) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.payout-confirmation__upload > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.payout-confirmation__preview {
+  width: 296px;
+  height: 162px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eeeeee;
+  border: 1px dashed #d0d0d0;
+  border-radius: 4px;
+  margin: auto;
+  margin-bottom: 24px;
 }
