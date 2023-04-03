@@ -50,6 +50,22 @@
   color: #3c3c3c;
 }
 
+.payout-time__number p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.payout-time__countdown {
+  color: #ffffff;
+  padding: 2px 4px;
+  background: #fa2c5a;
+  border-radius: 2px;
+}
+
 .payout-detail__bank {
   width: 605px;
   display: flex;
@@ -253,11 +269,17 @@
   margin-bottom: 16px;
 }
 
-.payout-confirmation__header p {
+.payout-confirmation__header > p:nth-child(1) {
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #000000;
+}
+
+.payout-confirmation__header > p:nth-child(2) {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .payout-detail__confirmation > p:nth-child(2) {

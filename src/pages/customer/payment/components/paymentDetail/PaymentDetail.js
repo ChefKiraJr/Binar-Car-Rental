@@ -14,7 +14,13 @@ import { useNavigate } from "react-router-dom";
 
 const PaymentDetail = ({ data, range }) => {
   const [paymentMethod, setPaymentMethod] = useState("");
+  const totalPayment = data.price * range;
   const navigate = useNavigate();
+  const handleClick = () => {
+    localStorage.setItem("paymentMethod", paymentMethod);
+    localStorage.setItem("totalPayment", totalPayment);
+    navigate(`/payout/${data.id}`);
+  };
   return (
     <div className="payment-detail__container">
       <div className="payment-detail__main">
@@ -133,7 +139,7 @@ const PaymentDetail = ({ data, range }) => {
             lineHeight="20px"
             backgroundColor="#5CB85F"
             borderRadius="2px"
-            onClick={() => navigate(`/payout/${data.id}`)}
+            onClick={() => handleClick()}
           >
             Bayar
           </Button>
