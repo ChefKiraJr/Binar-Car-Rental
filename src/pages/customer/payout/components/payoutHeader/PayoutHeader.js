@@ -12,17 +12,20 @@ const PayoutHeader = ({ anak, paymentMethod }) => {
     <div className="payout-header__container">
       <div className="payout-header__main">
         <div className="payout-header__title">
-          <div
-            className="payout-header__back"
-            onClick={() => navigate(`/payment/${anak}`)}
-          >
-            <BackIcon />
+          <div className="payout-header__name">
+            <div
+              className="payout-header__back"
+              onClick={() => navigate(`/payment/${anak}`)}
+            >
+              <BackIcon />
+            </div>
+            <p>{paymentMethod} Transfer</p>
           </div>
-          <p>{paymentMethod} Transfer</p>
+          <div className="payout-header__number">Order ID: {anak}</div>
         </div>
         <div className="payout-header__tracker">
           <div className="payout-tracker__step-active">
-            <p>1</p>
+            <p>&#10003;</p>
             <p>Pilih Metode</p>
           </div>
           <DashIcon />
@@ -37,7 +40,6 @@ const PayoutHeader = ({ anak, paymentMethod }) => {
           </div>
         </div>
       </div>
-      <div className="payout-header__number">Order ID: {anak}</div>
     </div>
   );
 };

@@ -34,7 +34,7 @@
 }
 
 .header-nav p {
-  font-family: 'Arial';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -57,7 +57,7 @@
 }
 
 .header-nav__unfunc p {
-  font-family: 'Arial';
+  font-family: "Arial";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -97,6 +97,9 @@
     right: 25px;
   }
   .header-nav {
+    display: none;
+  }
+  .header-nav__unfunc {
     display: none;
   }
 }
