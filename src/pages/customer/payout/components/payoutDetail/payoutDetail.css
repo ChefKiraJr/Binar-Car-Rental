@@ -21,7 +21,7 @@
 }
 
 .payout-detail__time {
-  width: 605px;
+  max-width: 605px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +67,7 @@
 }
 
 .payout-detail__bank {
-  width: 605px;
+  max-width: 605px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -178,7 +178,7 @@
 }
 
 .payout-detail__instruction {
-  width: 605px;
+  max-width: 605px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -323,3 +323,12 @@
   margin: auto;
   margin-bottom: 24px;
 }
+
+/* @media (max-width: 1072px) {
+  .payout-detail__main {
+    width: 100%;
+  }
+  .payout-detail__time {
+    width: 100%;
+  }
+} */
