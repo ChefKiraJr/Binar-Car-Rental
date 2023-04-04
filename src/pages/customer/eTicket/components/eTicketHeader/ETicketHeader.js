@@ -12,22 +12,25 @@ const ETicketHeader = ({ anak }) => {
     <div className="ticket-header__container">
       <div className="ticket-header__main">
         <div className="ticket-header__title">
-          <div
-            className="ticket-header__back"
-            onClick={() => navigate(`/payout/${anak}`)}
-          >
-            <BackIcon />
+          <div className="ticket-header__name">
+            <div
+              className="ticket-header__back"
+              onClick={() => navigate(`/payout/${anak}`)}
+            >
+              <BackIcon />
+            </div>
+            <p>Tiket</p>
           </div>
-          <p>Tiket</p>
+          <div className="ticket-header__number">Order ID: {anak}</div>
         </div>
         <div className="ticket-header__tracker">
           <div className="ticket-tracker__step-active">
-            <p>1</p>
+            <p>&#10003;</p>
             <p>Pilih Metode</p>
           </div>
           <DashIcon />
           <div className="ticket-tracker__step-active">
-            <p>2</p>
+            <p>&#10003;</p>
             <p>Bayar</p>
           </div>
           <DashIcon />
@@ -37,7 +40,6 @@ const ETicketHeader = ({ anak }) => {
           </div>
         </div>
       </div>
-      <div className="ticket-header__number">Order ID: {anak}</div>
     </div>
   );
 };

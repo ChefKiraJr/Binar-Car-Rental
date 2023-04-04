@@ -1,15 +1,20 @@
-import React, { useState } from "react";
-import "./payoutDetail.css";
-import { Button } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import { CopyIcon } from "./Dummy";
-import { ImageIcon } from "../../../eTicket/components/eTicketSuccess/Dummy";
-import moment from "moment/moment";
+import React, { useState, useMemo } from 'react';
+import './payoutDetail.css';
+import { Button, Input } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import { CopyIcon } from './Dummy';
+import { ImageIcon } from '../../../eTicket/components/eTicketSuccess/Dummy';
+import moment from 'moment/moment';
 
 const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
+  // const [paymentProof, setPaymentProof] = useState(null);
   const [confirmStatus, setConfirmStatus] = useState(false);
-  const dueDate = moment().add(1, "days").format("LLLL");
+  const dueDate = useMemo(
+    () => moment().add(1, 'days').format('LLLL'),
+    [moment()]
+  );
   const navigate = useNavigate();
+  console.log(dueDate);
   return (
     <div className="payout-detail__container">
       <div className="payout-detail__main">
@@ -73,7 +78,7 @@ const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
               <ul>
                 <li>Masukkan kartu ATM, lalu PIN</li>
                 <li>
-                  Pilih menu "Transaksi Lainnya" - "Transfer" - "Ke Rek{" "}
+                  Pilih menu "Transaksi Lainnya" - "Transfer" - "Ke Rek{' '}
                   {paymentMethod} Virtual Account"
                 </li>
                 <li>
