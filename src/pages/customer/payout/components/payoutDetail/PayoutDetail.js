@@ -9,7 +9,10 @@ import moment from 'moment/moment';
 const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
   // const [paymentProof, setPaymentProof] = useState(null);
   const [confirmStatus, setConfirmStatus] = useState(false);
-  const dueDate = useMemo(() => moment().add(1, 'days').format('LLLL'), []);
+  const dueDate = useMemo(
+    () => moment().add(1, 'days').format('LLLL'),
+    [moment()]
+  );
   const navigate = useNavigate();
   console.log(dueDate);
   return (
