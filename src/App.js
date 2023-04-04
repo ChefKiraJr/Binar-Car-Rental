@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/car-search" element={<CarSearch />} />
-          <Route path="/customer/login" element={<Login />} />
-          <Route path="/customer/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/search-result" element={<SearchResult />} />
           <Route path="/car-detail/:anak" element={<CarDetail />} />
           <Route path="/payment/:anak" element={<Payment />} />
