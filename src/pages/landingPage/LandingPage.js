@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import CommonLayout from '../../components/commonLayout/CommonLayout';
 import CtaBanner from './components/ctaBanner/CtaBanner';
@@ -12,6 +12,9 @@ import { scroller } from 'react-scroll';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
   return (
     <CommonLayout scroller={scroller} page="landingPage">
       <HeroSection navigate={navigate} />

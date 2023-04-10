@@ -20,6 +20,10 @@
   gap: 16px;
 }
 
+.payment-header__back {
+  cursor: pointer;
+}
+
 .payment-header__title p {
   font-weight: 700;
   font-size: 14px;

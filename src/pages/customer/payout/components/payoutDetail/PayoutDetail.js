@@ -1,20 +1,34 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import './payoutDetail.css';
-import { Button, Input } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { CopyIcon } from './Dummy';
-import { ImageIcon } from '../../../eTicket/components/eTicketSuccess/Dummy';
+import { CopyIcon, UploadIcon } from './Dummy';
 import moment from 'moment/moment';
+import Timer24 from '../Timer24';
+import Timer10 from '../Timer10';
 
 const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
-  // const [paymentProof, setPaymentProof] = useState(null);
+  const [image, setImage] = useState(null);
   const [confirmStatus, setConfirmStatus] = useState(false);
-  const dueDate = useMemo(
-    () => moment().add(1, 'days').format('LLLL'),
-    [moment()]
-  );
+  const [confirmButtonStatus, setConfirmButtonStatus] = useState(false);
+  const [dueDate, setDueDate] = useState();
+  const findDueDate = () => {
+    const due = moment().add(1, 'days').format('LLLL');
+    setDueDate(due);
+  };
   const navigate = useNavigate();
-  console.log(dueDate);
+  const handleImage = (e) => {
+    if (e.target.files) {
+      setImage(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+  const handleSubmit = () => {
+    localStorage.setItem('slip', image);
+    setConfirmButtonStatus(true);
+  };
+  useEffect(() => {
+    findDueDate();
+  }, []);
   return (
     <div className="payout-detail__container">
       <div className="payout-detail__main">
@@ -25,11 +39,7 @@ const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
               <p>{dueDate}</p>
             </div>
             <div className="payout-time__number">
-              <p>
-                <span className="payout-time__countdown">23</span>:
-                <span className="payout-time__countdown">55</span>:
-                <span className="payout-time__countdown">09</span>
-              </p>
+              <Timer24 duration={24 * 60 * 60 * 1000} />
             </div>
           </div>
           <div className="payout-detail__bank">
@@ -75,21 +85,19 @@ const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
               </div>
             </div>
             <div className="payout-instruction__list">
-              <ul>
-                <li>Masukkan kartu ATM, lalu PIN</li>
-                <li>
-                  Pilih menu "Transaksi Lainnya" - "Transfer" - "Ke Rek{' '}
-                  {paymentMethod} Virtual Account"
-                </li>
-                <li>
-                  Masukkan nomor {paymentMethod} Virtual Account: 70020+Order ID
-                </li>
-                <li>
-                  Layar ATM akan menampilkan konfirmasi, ikuti instruksi untuk
-                  menyelesaikan transaksi
-                </li>
-                <li>Ambil dan simpanlah bukti transaksi tersebut</li>
-              </ul>
+              <li>Masukkan kartu ATM, lalu PIN</li>
+              <li>
+                Pilih menu "Transaksi Lainnya" - "Transfer" - "Ke Rek{' '}
+                {paymentMethod} Virtual Account"
+              </li>
+              <li>
+                Masukkan nomor {paymentMethod} Virtual Account: 70020+Order ID
+              </li>
+              <li>
+                Layar ATM akan menampilkan konfirmasi, ikuti instruksi untuk
+                menyelesaikan transaksi
+              </li>
+              <li>Ambil dan simpanlah bukti transaksi tersebut</li>
             </div>
           </div>
         </div>
@@ -97,10 +105,7 @@ const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
           <div className="payout-detail__confirmation">
             <div className="payout-confirmation__header">
               <p>Konfirmasi Pembayaran</p>
-              <p>
-                <span className="payout-time__countdown">09</span>:
-                <span className="payout-time__countdown">55</span>
-              </p>
+              <Timer10 duration={10 * 60 * 1000} />
             </div>
             <p>
               Terima kasih telah melakukan konfirmasi pembayaran. Pembayaranmu
@@ -113,24 +118,62 @@ const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
                 Untuk membantu kami lebih cepat melakukan pengecekan. Kamu bisa
                 upload bukti bayarmu
               </p>
-              <div className="payout-confirmation__preview">
-                <ImageIcon />
+              <div
+                className="payout-confirmation__preview"
+                onClick={() => document.querySelector('.input-field').click()}
+              >
+                <form>
+                  <input
+                    id="fileInput"
+                    type="file"
+                    className="input-field"
+                    accept="image/*"
+                    onChange={(event) => handleImage(event)}
+                    hidden
+                  />
+                  {image ? (
+                    <img
+                      src={image}
+                      alt="proof"
+                      style={{ width: '296px', height: '162px' }}
+                    />
+                  ) : (
+                    <UploadIcon />
+                  )}
+                </form>
               </div>
             </div>
-            <Button
-              w="100%"
-              h="36px"
-              padding="8px"
-              color="#fff"
-              fontWeight="700"
-              fontSize="14px"
-              lineHeight="20px"
-              backgroundColor="#5CB85F"
-              borderRadius="2px"
-              onClick={() => navigate(`/ticket/${anak}`)}
-            >
-              Upload
-            </Button>
+            {confirmButtonStatus ? (
+              <Button
+                w="100%"
+                h="36px"
+                padding="8px"
+                color="#fff"
+                fontWeight="700"
+                fontSize="14px"
+                lineHeight="20px"
+                backgroundColor="#5CB85F"
+                borderRadius="2px"
+                onClick={() => navigate(`/ticket/${anak}`)}
+              >
+                Konfimrasi
+              </Button>
+            ) : (
+              <Button
+                w="100%"
+                h="36px"
+                padding="8px"
+                color="#fff"
+                fontWeight="700"
+                fontSize="14px"
+                lineHeight="20px"
+                backgroundColor="#5CB85F"
+                borderRadius="2px"
+                onClick={handleSubmit}
+              >
+                Upload
+              </Button>
+            )}
           </div>
         ) : (
           <div className="payout-detail__check">
