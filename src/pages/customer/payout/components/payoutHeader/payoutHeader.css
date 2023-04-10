@@ -26,6 +26,10 @@
   gap: 16px;
 }
 
+.payout-header__back {
+  cursor: pointer;
+}
+
 .payout-header__title p {
   font-weight: 700;
   font-size: 14px;

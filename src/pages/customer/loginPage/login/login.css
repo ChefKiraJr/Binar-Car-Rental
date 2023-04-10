@@ -1,0 +1,55 @@
+.login__container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.login__container > p:nth-child(1) {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login__input {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.login__input p {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #222222;
+}
+
+.login__container > p:nth-child(4) {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+.signup__link {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: #0d28a6;
+}

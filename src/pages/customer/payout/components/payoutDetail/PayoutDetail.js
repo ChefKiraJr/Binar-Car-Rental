@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import './payoutDetail.css';
 import { Button, Input } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
@@ -9,12 +9,15 @@ import moment from 'moment/moment';
 const PayoutDetail = ({ anak, paymentMethod, totalPayment }) => {
   // const [paymentProof, setPaymentProof] = useState(null);
   const [confirmStatus, setConfirmStatus] = useState(false);
-  const dueDate = useMemo(
-    () => moment().add(1, 'days').format('LLLL'),
-    [moment()]
-  );
+  const [dueDate, setDueDate] = useState();
+  const findDueDate = () => {
+    const due = moment().add(1, 'days').format('LLLL');
+    setDueDate(due);
+  };
   const navigate = useNavigate();
-  console.log(dueDate);
+  useEffect(() => {
+    findDueDate();
+  }, []);
   return (
     <div className="payout-detail__container">
       <div className="payout-detail__main">

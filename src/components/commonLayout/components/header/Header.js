@@ -8,6 +8,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
+  Button,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -33,6 +34,19 @@ const Header = ({ scroller, page }) => {
           <p onClick={() => handleLink('why-us')}>Why Us</p>
           <p onClick={() => handleLink('testimonial')}>Testimonial</p>
           <p onClick={() => handleLink('faq')}>FAQ</p>
+          <Button
+            w="81px"
+            h="36px"
+            padding="8px 12px"
+            color="#fff"
+            fontWeight="700"
+            fontSize="14px"
+            lineHeight="20px"
+            backgroundColor="#5CB85F"
+            borderRadius="2px"
+          >
+            Register
+          </Button>
         </div>
         <>
           <HamburgerIcon
@@ -54,6 +68,19 @@ const Header = ({ scroller, page }) => {
                   <p onClick={() => handleLink('why-us')}>Why Us</p>
                   <p onClick={() => handleLink('testimonial')}>Testimonial</p>
                   <p onClick={() => handleLink('faq')}>FAQ</p>
+                  <Button
+                    w="100%"
+                    h="36px"
+                    padding="8px"
+                    color="#fff"
+                    fontWeight="700"
+                    fontSize="14px"
+                    lineHeight="20px"
+                    backgroundColor="#5CB85F"
+                    borderRadius="2px"
+                  >
+                    Register
+                  </Button>
                 </div>
               </DrawerBody>
             </DrawerContent>

@@ -26,6 +26,10 @@
   gap: 16px;
 }
 
+.ticket-header__back {
+  cursor: pointer;
+}
+
 .ticket-header__title p {
   font-weight: 700;
   font-size: 14px;
