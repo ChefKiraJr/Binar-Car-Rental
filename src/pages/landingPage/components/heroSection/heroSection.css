@@ -101,7 +101,9 @@
     display: inline-block;
     position: absolute;
     top: 486px;
+    left: 70px;
     right: 0;
+    width: 400px;
   }
 }
 
@@ -127,7 +129,8 @@
   .hero-section__photo-small {
     display: inline-block;
     position: absolute;
-    top: 568px;
+    top: 658px;
     right: 0;
+    width: 270px;
   }
 }

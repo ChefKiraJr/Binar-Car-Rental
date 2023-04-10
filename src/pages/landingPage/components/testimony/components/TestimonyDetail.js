@@ -1,7 +1,7 @@
-import React from 'react';
-import { RatingIcon } from './Dummy';
-import './testimonyDetail.css';
-import testimonyImage from '../../../../../assets/images/testimony_photo.png';
+import React from "react";
+import { RatingIcon } from "./Dummy";
+import "./testimonyDetail.css";
+import testimonyImage from "../../../../../assets/images/testimony_photo.webp";
 
 const TestimonyDetail = () => {
   return (
