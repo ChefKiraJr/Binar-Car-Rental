@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './register.css';
-import { Input, Button } from '@chakra-ui/react';
+import { Input, Button, useToast } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -10,10 +10,24 @@ const Register = () => {
     password: '',
   });
   const navigate = useNavigate();
+  const toast = useToast();
   const handleChange = (e) => {
     let temp = { ...input };
     temp[e.target.name] = e.target.value;
     setInput(temp);
+  };
+  const handleSubmit = () => {
+    toast({
+      title: 'Register Success',
+      description: 'Going to login page now.',
+      status: 'success',
+      position: 'top',
+      duration: 1000,
+      isClosable: true,
+    });
+    setTimeout(() => {
+      navigate('/login');
+    }, 2000);
   };
   return (
     <div className="register__container">
@@ -66,7 +80,7 @@ const Register = () => {
         lineHeight="20px"
         backgroundColor="#0D28A6"
         borderRadius="2px"
-        onClick={() => navigate('/')}
+        onClick={handleSubmit}
       >
         Sign Up
       </Button>

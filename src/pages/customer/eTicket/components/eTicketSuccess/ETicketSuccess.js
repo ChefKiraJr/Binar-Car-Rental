@@ -1,9 +1,14 @@
-import React from "react";
-import { Button } from "@chakra-ui/react";
-import { DownloadIcon, ImageIcon, SuccessIcon } from "./Dummy";
-import "./eTicketSuccess.css";
+import React, { useEffect, useState } from 'react';
+import { Button } from '@chakra-ui/react';
+import { DownloadIcon, ImageIcon, SuccessIcon } from './Dummy';
+import './eTicketSuccess.css';
 
 const ETicketSuccess = () => {
+  const [invoiceImage, setInvoiceImage] = useState(null);
+  useEffect(() => {
+    const slip = localStorage.getItem('slip');
+    setInvoiceImage(slip);
+  }, []);
   return (
     <div className="ticket-success__container">
       <div className="ticket-success__main">
@@ -31,10 +36,18 @@ const ETicketSuccess = () => {
             </Button>
           </div>
           <div className="ticket-download__info">*no invoice</div>
-          <div className="ticket-download__preview">
-            <ImageIcon />
-            <p>PDF Viewer</p>
-          </div>
+          {invoiceImage ? (
+            <img
+              src={invoiceImage}
+              alt="invoice"
+              style={{ width: '557px', height: '162px' }}
+            />
+          ) : (
+            <div className="ticket-download__preview">
+              <ImageIcon />
+              <p>PDF Viewer</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

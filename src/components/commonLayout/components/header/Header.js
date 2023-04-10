@@ -11,8 +11,10 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ scroller, page }) => {
+  const navigate = useNavigate();
   const handleLink = (content) => {
     scroller.scrollTo(content, {
       smooth: true,
@@ -44,6 +46,7 @@ const Header = ({ scroller, page }) => {
             lineHeight="20px"
             backgroundColor="#5CB85F"
             borderRadius="2px"
+            onClick={() => navigate('/register')}
           >
             Register
           </Button>
@@ -78,6 +81,7 @@ const Header = ({ scroller, page }) => {
                     lineHeight="20px"
                     backgroundColor="#5CB85F"
                     borderRadius="2px"
+                    onClick={() => navigate('/register')}
                   >
                     Register
                   </Button>

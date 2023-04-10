@@ -16,16 +16,9 @@ function App() {
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage page="login" />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage page="login" />} />
           <Route path="/register" element={<LoginPage page="register" />} />
-          <Route
-            path="/home"
-            element={
-              <ProtectedRoute>
-                <LandingPage />
-              </ProtectedRoute>
-            }
-          />
           <Route
             path="/car-search"
             element={

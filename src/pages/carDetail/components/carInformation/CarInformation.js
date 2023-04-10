@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "./carInformation.css";
+import React, { useState } from 'react';
+import './carInformation.css';
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from "@chakra-ui/react";
-import { PeopleIcon, CalendarIcon } from "./Dummy";
-import { Button } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import { addDays } from "date-fns";
-import "react-datepicker/dist/react-datepicker.css";
+} from '@chakra-ui/react';
+import { PeopleIcon, CalendarIcon } from './Dummy';
+import { Button } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
+import { addDays } from 'date-fns';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const CarInformation = ({ data }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -23,12 +23,12 @@ const CarInformation = ({ data }) => {
     setEndDate(end);
   };
   const handleClick = () => {
-    localStorage.setItem("startDate", startDate);
-    localStorage.setItem("endDate", endDate);
+    localStorage.setItem('startDate', startDate);
+    localStorage.setItem('endDate', endDate);
     const diff = endDate.getTime() - startDate.getTime();
     const msInDay = 1000 * 3600 * 24;
     const range = diff / msInDay + 1;
-    localStorage.setItem("range", range);
+    localStorage.setItem('range', range);
     navigate(`/payment/${data.id}`);
   };
   const navigate = useNavigate();
@@ -42,27 +42,23 @@ const CarInformation = ({ data }) => {
               <div className="car-content__desc">
                 <div className="car-desc__header">Include</div>
                 <div className="car-desc__info">
-                  <ul>
-                    <li>
-                      Apa saja yang termasuk dalam paket misal durasi max 12 jam
-                    </li>
-                    <li>Sudah termasuk bensin selama 12 jam</li>
-                    <li>Sudah termasuk Tiket Wisata</li>
-                    <li>Sudah termasuk pajak</li>
-                  </ul>
+                  <li>
+                    Apa saja yang termasuk dalam paket misal durasi max 12 jam
+                  </li>
+                  <li>Sudah termasuk bensin selama 12 jam</li>
+                  <li>Sudah termasuk Tiket Wisata</li>
+                  <li>Sudah termasuk pajak</li>
                 </div>
               </div>
               <div className="car-content__desc">
                 <div className="car-desc__header">Exclude</div>
                 <div className="car-desc__info">
-                  <ul>
-                    <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-                    <li>
-                      Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-                      20.000/jam
-                    </li>
-                    <li>Tidak termasuk akomodasi penginapan</li>
-                  </ul>
+                  <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
+                  <li>
+                    Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
+                    20.000/jam
+                  </li>
+                  <li>Tidak termasuk akomodasi penginapan</li>
                 </div>
               </div>
               <Accordion allowToggle>
@@ -78,14 +74,12 @@ const CarInformation = ({ data }) => {
                   </AccordionButton>
                   <AccordionPanel pb={4} padding="0">
                     <div className="car-desc__info">
-                      <ul>
-                        <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-                        <li>
-                          Jika overtime lebih dari 12 jam akan ada tambahan
-                          biaya Rp 20.000/jam
-                        </li>
-                        <li>Tidak termasuk akomodasi penginapan</li>
-                      </ul>
+                      <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
+                      <li>
+                        Jika overtime lebih dari 12 jam akan ada tambahan biaya
+                        Rp 20.000/jam
+                      </li>
+                      <li>Tidak termasuk akomodasi penginapan</li>
                     </div>
                   </AccordionPanel>
                 </AccordionItem>
@@ -100,11 +94,11 @@ const CarInformation = ({ data }) => {
                 <div className="car-card__people">
                   <PeopleIcon />
                   <p>
-                    {data.category === "large"
-                      ? "6 - 8 orang"
-                      : data.category === "medium"
-                      ? "4 - 6 orang"
-                      : "2 - 4 orang"}
+                    {data.category === 'large'
+                      ? '6 - 8 orang'
+                      : data.category === 'medium'
+                      ? '4 - 6 orang'
+                      : '2 - 4 orang'}
                   </p>
                 </div>
               </div>

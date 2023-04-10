@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './login.css';
-import { Input, Button } from '@chakra-ui/react';
+import { Input, Button, useToast } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -9,14 +10,40 @@ const Login = () => {
     password: '',
   });
   const navigate = useNavigate();
+  const toast = useToast();
   const handleChange = (e) => {
     let temp = { ...input };
     temp[e.target.name] = e.target.value;
     setInput(temp);
   };
-  const handleSubmit = () => {
-    localStorage.setItem('email', input.email);
-    navigate('/home');
+  const handleSubmit = async () => {
+    try {
+      const res = await axios.post(
+        'https://bootcamp-rent-cars.herokuapp.com/customer/auth/login',
+        input
+      );
+      localStorage.setItem('token', res.data.access_token);
+      toast({
+        title: 'Login Success',
+        description: 'Going to car search page now.',
+        status: 'success',
+        position: 'top',
+        duration: 1000,
+        isClosable: true,
+      });
+      setTimeout(() => {
+        navigate('/car-search');
+      }, 2000);
+    } catch (err) {
+      toast({
+        title: 'Login Failed',
+        description: 'Wrong email or password.',
+        status: 'error',
+        position: 'top',
+        duration: 1000,
+        isClosable: true,
+      });
+    }
   };
   useEffect(() => {
     localStorage.clear();
